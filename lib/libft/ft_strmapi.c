@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/01/27 17:42:23 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/11/03 17:01:53 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/11/09 20:26:40 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "ft_printf.h"
-
-int	main(int ac, char **av)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char	*p;
+	int		len;
+	int		i;
 
-	if (ac != 1)
+	if (!s || !f)
+		return (0);
+	len = ft_strlen(s);
+	p = (char *)malloc((len + 1) * sizeof(char));
+	if (!p)
+		return (0);
+	i = 0;
+	while (i < len)
 	{
-		
+		p[i] = f(i, s[i]);
+		i++;
 	}
+	p[i] = 0;
+	return (p);
 }

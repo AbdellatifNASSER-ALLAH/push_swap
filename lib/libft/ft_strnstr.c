@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/01/27 17:42:23 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/28 22:42:03 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/11/12 17:46:06 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "ft_printf.h"
-
-int	main(int ac, char **av)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	i;
+	size_t	j;
 
-	if (ac != 1)
+	if (!*little)
+		return ((char *)big);
+	j = 0;
+	while (j < len && big[j])
 	{
-		
+		i = 0;
+		while (little[i] && big[j + i] == little[i] && i + j < len)
+			i++;
+		if (!little[i])
+			return ((char *)big + j);
+		j++;
 	}
+	return (0);
 }

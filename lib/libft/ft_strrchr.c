@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/01/27 17:42:23 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/28 12:10:15 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/10/29 22:00:28 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "ft_printf.h"
-
-int	main(int ac, char **av)
+char	*ft_strrchr(const char *s, int c)
 {
+	char	*p;
+	char	cc;
 
-	if (ac != 1)
+	p = (char *)s;
+	cc = c;
+	while (*s)
 	{
-		
+		if (*s == cc)
+			p = (char *)s;
+		s++;
 	}
+	if (*s == cc)
+		p = (char *)s;
+	if (*p == cc)
+		return (p);
+	return (NULL);
 }

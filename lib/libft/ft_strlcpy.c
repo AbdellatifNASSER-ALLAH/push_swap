@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/01/27 17:42:23 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/27 17:07:55 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/11/12 17:33:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-#include "ft_printf.h"
-
-int	main(int ac, char **av)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
+	size_t	slen;
+	size_t	i;
 
-	if (ac != 1)
-	{
-		
-	}
+	slen = ft_strlen(src);
+	if (size == 0)
+		return (slen);
+	i = 0;
+	while (i < size - 1 && *src)
+		dst[i++] = *src++;
+	dst[i] = '\0';
+	return (slen);
 }
