@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/01 22:42:56 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:34:37 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(int ac, char **av)
 			return (1);
 
 		//TODO: the algorithm to sort the stack a 
+		swap(&a, &b, SA);
 		view_list(a, b);
 	}
 	return (0);
