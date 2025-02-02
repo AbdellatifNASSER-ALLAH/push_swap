@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:35:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/01 23:01:03 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:21:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	fill_stack(t_list **list, int ac, char **av)
 {
 	int	i;
 	int	j;
-	int	n;
+	long	n;
 
 	i = 1;
 	while( i < ac)
@@ -37,14 +37,14 @@ int	fill_stack(t_list **list, int ac, char **av)
 	}
 }
 
-int get_number(char *str, int *j)                          
+long get_number(char *str, int *j)                          
 {                                                      
 	long    res;                                       
 	int     sign;                                      
 
 	res = 0;                                           
 	sign = 1;                                          
-	if (!(str[*j] == 32 || (str[*j] >= 9 && str[*j] <= 13)) && !(str[*j] && str[*j] >= '0' && str[*j] <= '9'))
+	if (*j && !(str[*j] == 32 || (str[*j] >= 9 && str[*j] <= 13)) && !(str[*j] && str[*j] >= '0' && str[*j] <= '9'))
 		return (*j = -1);
 	while (str[*j] == 32 || (str[*j] >= 9 && str[*j] <= 13)) 
 		(*j)++;                                        

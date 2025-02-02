@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/01 23:31:40 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:22:22 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ typedef	struct	 s_list{
 	struct	s_list	*next;
 }	t_list;
 //Utils: 
-int	ft_inlst(t_list *lst, int n);
+int	ft_inlst(t_list *lst, long n);
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstdelone(t_list *lst);
 void				ft_lstclear(t_list **lst);
 int	fill_stack(t_list **list, int ac, char **av);
-int	get_number(char *str, int *j);
+long	get_number(char *str, int *j);
 //Operations:
 void	swap(t_list **a, t_list **b, int o);
 void	push(t_list **a, t_list **b, int o);

@@ -6,14 +6,16 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:19:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/01 22:58:44 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:24:27 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_inlst(t_list *lst, int n)
+int	ft_inlst(t_list *lst, long n)
 {
+	if (n > 2147483647 || n < -2147483648)
+		return (1);
 	while(lst)
 	{
 		if (n == lst->content)
