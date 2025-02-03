@@ -16,7 +16,7 @@ int	ft_inlst(t_list *lst, long n)
 {
 	if (n > 2147483647 || n < -2147483648)
 		return (1);
-	while(lst)
+	while (lst)
 	{
 		if (n == lst->content)
 			return (1);
