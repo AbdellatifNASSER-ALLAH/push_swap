@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/03 10:16:31 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:18:35 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,7 @@ int	main(int ac, char **av)
 		b = NULL;
 		if (!fill_stack(&a, ac, av))
 			return (1);
-		// TODO: the algorithm to sort the stack a
-		push(&a, &b, PB);
-		view_list(a, b);
-		push(&a, &b, PB);
-		view_list(a, b);
-		push(&a, &b, PB);
-		view_list(a, b);
-		rotate(&a, &b, RA);
-		view_list(a, b);
-		rotate(&a, &b, RB);
-		view_list(a, b);
-		rotate(&a, &b, RR);
-		view_list(a, b);
+		sort_algo(&a, &b);
 	}
 	return (0);
 }

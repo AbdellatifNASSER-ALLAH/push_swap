@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/02 17:33:14 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/04 11:18:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 }					t_list;
+void	sort_algo(t_list **a, t_list **b);
 // Utils:
 int					ft_inlst(t_list *lst, long n);
 t_list				*ft_lstnew(int content);

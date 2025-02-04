@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/05 10:53:56 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/08 14:05:35 by abdnasse         ###   ########.fr       */
+/*   Created: 2025/02/04 11:17:29 by abdnasse          #+#    #+#             */
+/*   Updated: 2025/02/04 11:20:30 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+#include "push_swap.h"
+
+void	sort_algo(t_list **a, t_list **b)
 {
-	t_list	*last;
+	int	max;
+	int	max_bits;
 
-	if (!lst || !new)
-		return ;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		last = ft_lstlast(*lst);
-		last->next = new;
-	}
+	max = 
 }
