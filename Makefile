@@ -2,7 +2,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g #TODO:	The -g flag it is not necessary here (it is just for debbuging)
 
-SRCS = lst_utils.c  operations.c  push_swap.c  utils.c
+SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c
 OBJS =$(SRCS:.c=.o) 
 
 NAME = push_swap
