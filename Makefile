@@ -1,6 +1,6 @@
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g #TODO:	The -g flag it is not necessary here (it is just for debbuging)
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c
 OBJS =$(SRCS:.c=.o) 
@@ -15,6 +15,9 @@ $(NAME): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+debug: $(SRCS)
+	$(CC) $(CFLAGS) -g $^ -o $(NAME)
+		
 clean:
 	rm -f $(OBJS)
 
