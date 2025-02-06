@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 11:17:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 19:25:18 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 20:26:54 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	get_index(int *arr, int n, int size)
 	i = 0;
 	while (i < size)
 	{
-		if (arr[i] = n)
+		if (arr[i] == n)
 			return (i);
 		i++;
 	}
@@ -49,8 +49,8 @@ static void	fill_sort_arr(t_list **a, int *arr, int	size)
 
 void	sort_algo(t_list **a, t_list **b, int size)
 {
-	int	*arr[size];
-	int	ent;
+	int	arr[size];
+	int	end;
 
 	fill_sort_arr(a, arr, size);
 	if (size <= 100)

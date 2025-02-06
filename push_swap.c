@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 16:31:11 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:51:25 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int ac, char **av)
 		if (!fill_stack(&a, ac, av))
 			return (1);
 		//view_list(a, b);
-		sort_algo(&a, &b, ft_lstsize(*a));
+		sort_algo(&a, &b, ft_lstsize(a));
 		//view_list(a, b);
 	}
 	return (0);

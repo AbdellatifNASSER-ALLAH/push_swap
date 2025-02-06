@@ -2,7 +2,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c
+SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c chunks.c quick_sort.c
 OBJS =$(SRCS:.c=.o) 
 
 NAME = push_swap

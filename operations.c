@@ -6,23 +6,18 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 23:33:14 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/03 10:05:23 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 21:00:58 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*get_last(t_list *lst, int what)
+static t_list	*get_last(t_list *lst, int before_last)
 {
-	t_list	*blast;
-
-	if (what)
+	if (before_last)
 	{
-		while (lst->next && blast->next)
-		{
+		while (lst->next->next)
 			lst = lst->next;
-			blast = lst->next;
-		}
 	}
 	else
 		while (lst->next)
