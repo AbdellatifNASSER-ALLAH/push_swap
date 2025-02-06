@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/04 11:18:51 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 19:26:52 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@
 
 typedef struct s_list
 {
-	int				content;
+	int	content;
+	size_t	index;
 	struct s_list	*next;
 }					t_list;
-void	sort_algo(t_list **a, t_list **b);
+void	sort_algo(t_list **a, t_list **b, int size);
+void	quick_sort(int	*arr, int low, int high);
+void	push_to_a(t_list **a, t_list **b, int start, int end);
+void	push_to_b(t_list **a, t_list **b, int max, int size);
 // Utils:
 int					ft_inlst(t_list *lst, long n);
 t_list				*ft_lstnew(int content);
