@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 18:44:57 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 22:02:08 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:27:48 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	push_to_b(t_list **a, t_list **b, int start, int end)
 		{
 			push(a, b, PB);
 			if (*b && (*b)->next && (*b)->index < (*b)->next->index)
-				rotate(a, b, RB);
+				swap(a, b, SB);
 			increment(&start, &end);
 		}
 		else

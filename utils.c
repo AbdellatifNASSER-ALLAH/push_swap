@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:35:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/03 10:33:13 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/06 22:33:08 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,9 @@ long	get_number(char *str, int *j)
 
 	res = 0;
 	sign = 1;
-	if (*j && !(str[*j] == 32 || (str[*j] >= 9 && str[*j] <= 13)) && !(str[*j]
-			&& str[*j] >= '0' && str[*j] <= '9'))
+	if (*j && !(str[*j] == 32) && !(str[*j] && str[*j] >= '0' && str[*j] <= '9'))
 		return (*j = -1);
-	while (str[*j] == 32 || (str[*j] >= 9 && str[*j] <= 13))
+	while (str[*j] == 32)
 		(*j)++;
 	if (str[*j] == '-' || str[*j] == '+')
 	{
@@ -60,5 +59,7 @@ long	get_number(char *str, int *j)
 		return (*j = -1);
 	while (str[*j] && str[*j] >= '0' && str[*j] <= '9')
 		res = res * 10 + (str[(*j)++] - 48);
+	while (str[*j] == 32)
+		(*j)++;
 	return (res * sign);
 }
