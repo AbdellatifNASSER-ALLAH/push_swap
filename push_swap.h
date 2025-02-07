@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 20:31:41 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/07 11:15:44 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ typedef struct s_list
 	int	index;
 	struct s_list	*next;
 }					t_list;
+// Sort algorithm
 void	sort_algo(t_list **a, t_list **b, int size);
 void	quick_sort(int	*arr, int low, int high);
 void	push_to_a(t_list **a, t_list **b, int start, int end);
 void	push_to_b(t_list **a, t_list **b, int max, int size);
+void	simple_sort(t_list **a, t_list **b, int size);
 // Utils:
 int					ft_inlst(t_list *lst, long n);
 t_list				*ft_lstnew(int content);
