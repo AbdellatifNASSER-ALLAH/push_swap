@@ -14,9 +14,6 @@ $(NAME): $(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-debug: $(SRCS)
-	$(CC) $(CFLAGS) -g $^ -o $(NAME)
 		
 clean:
 	rm -f $(OBJS)

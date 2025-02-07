@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 11:17:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/07 11:14:00 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:26:25 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ static	int	get_index(int *arr, int n, int size)
 	return (size);
 }
 
-static void	fill_sort_arr(t_list **a, int *arr, int	size)
+static void	fill_index_stack(t_list **a, int	size)
 {
 	int	i;
+	int	arr[size];
 	t_list	*tmp;
 
 	i = 0;
@@ -49,10 +50,13 @@ static void	fill_sort_arr(t_list **a, int *arr, int	size)
 
 void	sort_algo(t_list **a, t_list **b, int size)
 {
-	int	arr[size];
 	int	end;
 
-	fill_sort_arr(a, arr, size);
+	fill_index_stack(a, size);
+	if (is_sorted(*a))
+		return ;
+	if (size < 5)
+		return (simple_sort(a, b, size));
 	if (size <= 100)
 		end = size / 6;
 	else

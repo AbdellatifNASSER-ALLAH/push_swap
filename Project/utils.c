@@ -6,11 +6,25 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:35:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 22:33:08 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/07 12:39:22 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_sorted(t_list *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		if (lst->index != i++)
+			return (0);
+		lst = lst->next;
+	}
+	return (1);
+}
 
 int	fill_stack(t_list **list, int ac, char **av)
 {
