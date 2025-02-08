@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 11:17:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/07 16:10:50 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:00:20 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,12 @@ static int	get_index(int *arr, int n, int size)
 static void	fill_index_stack(t_list **a, int size)
 {
 	int		i;
-	int		arr[size];
+	int		*arr;
 	t_list	*tmp;
 
+	arr = (int *)malloc(size * sizeof(int));
+	if (!arr)
+		return ;
 	i = 0;
 	tmp = *a;
 	while (tmp)
@@ -46,6 +49,7 @@ static void	fill_index_stack(t_list **a, int size)
 		tmp->index = get_index(arr, tmp->content, size);
 		tmp = tmp->next;
 	}
+	free(arr);
 }
 
 void	sort_algo(t_list **a, t_list **b, int size)

@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 11:16:15 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/08 14:20:26 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:04:13 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,12 @@ static void	sort_4(t_list **a, t_list **b, int min_index)
 {
 	if ((*a)->index > (*a)->next->index)
 		swap(a, b, SA);
-	while ((*a)->index != min_index)
-		rotate(a, b, RA);
+	if ((*a)->index == min_index || (*a)->next->index == min_index)
+		while ((*a)->index != min_index)
+			rotate(a, b, RA);
+	else
+		while ((*a)->index != min_index)
+			rrotate(a, b, RRA);
 	if (is_sorted(*a))
 		return ;
 	push(a, b, PB);
