@@ -44,7 +44,6 @@ static int	in_first_half(t_list *lst, int *max, int size)
 {
 	t_list	*tmp;
 
-
 	*max = 0;
 	tmp = lst;
 	while (lst)
@@ -64,14 +63,14 @@ static int	in_first_half(t_list *lst, int *max, int size)
 
 void	push_to_a(t_list **a, t_list **b, int max, int size)
 {
-	while(*b)
+	while (*b)
 	{
 		if (in_first_half(*b, &max, size / 2))
 		{
 			while (*b && (*b)->index != max)
 				rotate(a, b, RB);
 		}
-		else 
+		else
 		{
 			while (*b && (*b)->index != max)
 				rrotate(a, b, RRB);

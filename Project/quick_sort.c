@@ -12,16 +12,16 @@
 
 #include "push_swap.h"
 
-static	void	swap_int(int *a, int *b)
+static void	swap_int(int *a, int *b)
 {
-	int t;
+	int	t;
 
 	t = *a;
 	*a = *b;
 	*b = t;
 }
 
-static	int	partition(int *arr, int low, int high)
+static int	partition(int *arr, int low, int high)
 {
 	int	i;
 	int	j;
@@ -32,7 +32,7 @@ static	int	partition(int *arr, int low, int high)
 	{
 		while (arr[i] <= arr[low] && i < high)
 			i++;
-		while(arr[j] > arr[low] && j > low)
+		while (arr[j] > arr[low] && j > low)
 			j--;
 		if (i < j)
 			swap_int(&arr[i], &arr[j]);
@@ -42,7 +42,7 @@ static	int	partition(int *arr, int low, int high)
 	return (j);
 }
 
-void	quick_sort(int	*arr, int low, int high)
+void	quick_sort(int *arr, int low, int high)
 {
 	int	pi;
 

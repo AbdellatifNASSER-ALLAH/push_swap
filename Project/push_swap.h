@@ -20,18 +20,18 @@
 
 typedef struct s_list
 {
-	int	content;
-	int	index;
+	int				content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 // Sort algorithm
-void	sort_algo(t_list **a, t_list **b, int size);
-void	quick_sort(int	*arr, int low, int high);
-void	push_to_a(t_list **a, t_list **b, int start, int end);
-void	push_to_b(t_list **a, t_list **b, int max, int size);
-void	simple_sort(t_list **a, t_list **b, int size);
+void				sort_algo(t_list **a, t_list **b, int size);
+void				quick_sort(int *arr, int low, int high);
+void				push_to_a(t_list **a, t_list **b, int start, int end);
+void				push_to_b(t_list **a, t_list **b, int max, int size);
+void				simple_sort(t_list **a, t_list **b, int size);
 // Utils:
-int	is_sorted(t_list *lst);
+int					is_sorted(t_list *lst);
 int					ft_inlst(t_list *lst, long n);
 t_list				*ft_lstnew(int content);
 int					ft_lstsize(t_list *lst);

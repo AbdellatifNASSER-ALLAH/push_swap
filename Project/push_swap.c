@@ -6,12 +6,34 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/07 13:12:43 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/08 14:24:37 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	view_list(t_list *a, t_list *b);
+
+int	main(int ac, char **av)
+{
+	t_list	*a;
+	t_list	*b;
+
+	if (ac != 1)
+	{
+		a = NULL;
+		b = NULL;
+		if (!fill_stack(&a, ac, av))
+			return (1);
+		sort_algo(&a, &b, ft_lstsize(a));
+		ft_lstclear(&a);
+	}
+	return (0);
+}
+
+
+
+// JUST FOR SHOWING LISTS
 void	view_list(t_list *a, t_list *b)
 {
 	int	size;
@@ -27,22 +49,4 @@ void	view_list(t_list *a, t_list *b)
 		size--;
 	}
 	printf("   _     _\n   a     b  \n");
-}
-
-int	main(int ac, char **av)
-{
-	t_list	*a;
-	t_list	*b;
-
-	if (ac != 1)
-	{
-		a = NULL;
-		b = NULL;
-		if (!fill_stack(&a, ac, av))
-			return (1);
-		//view_list(a, b);
-		sort_algo(&a, &b, ft_lstsize(a));
-		//view_list(a, b);
-	}
-	return (0);
 }
