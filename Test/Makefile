@@ -7,17 +7,15 @@ NAME = push_swap
 
 # Complie
 CC = cc
-CFLAGS = -g
+CFLAGS = -Wall -Wextra -Werror
 
-# Path to the program
-PATH=$(DIR)/$(NAME)
-
+SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c chunks.c quick_sort.c simple_sort.c
 
 all: $(NAME)
 	$(MAKE) -C $(DIR) fclean
+
 $(NAME):
-	$(MAKE) -C $(DIR)
-	cp $(PATH) .
+	cp $(PATH)/*.c  $(PATH)/*.h .
 e:
 	@vi Makefile
 
