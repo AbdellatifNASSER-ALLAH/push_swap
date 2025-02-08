@@ -1,4 +1,4 @@
-.PHONY: e
+.PHONY: e clean
 # Dirctory where your project resides
 DIR=~/Files/push_swap/Project
 
@@ -9,13 +9,23 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = lst_utils.c  operations.c  push_swap.c  utils.c algorithm.c chunks.c quick_sort.c simple_sort.c
+SRC = lst_utils.c  operations.c  utils.c algorithm.c chunks.c quick_sort.c simple_sort.c
 
 all: $(NAME)
-	$(MAKE) -C $(DIR) fclean
+	$(CC) $(CFLAGS) -g push_swap.c $(SRC) -o $^
 
-$(NAME):
-	cp $(PATH)/*.c  $(PATH)/*.h .
+$(NAME): fclean
+	cp $(DIR)/*.c  $(DIR)/*.h .
 e:
 	@vi Makefile
 
+test:
+	./push_swap_test_linux.sh
+
+clean:
+	rm -rf *.c *.h
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all 
