@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:35:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/08 14:16:30 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:22:42 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,46 @@ int	is_sorted(t_list *lst)
 		lst = lst->next;
 	}
 	return (1);
+}
+
+static int	get_index(int *arr, int n, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (arr[i] == n)
+			return (i);
+		i++;
+	}
+	return (size);
+}
+
+void	fill_index_stack(t_list **a, int size)
+{
+	int		i;
+	int		*arr;
+	t_list	*tmp;
+
+	arr = (int *)malloc(size * sizeof(int));
+	if (!arr)
+		return ;
+	i = 0;
+	tmp = *a;
+	while (tmp)
+	{
+		arr[i++] = tmp->content;
+		tmp = tmp->next;
+	}
+	quick_sort(arr, 0, size - 1);
+	tmp = *a;
+	while (tmp)
+	{
+		tmp->index = get_index(arr, tmp->content, size);
+		tmp = tmp->next;
+	}
+	free(arr);
 }
 
 int	fill_stack(t_list **list, int ac, char **av)
@@ -51,6 +91,7 @@ int	fill_stack(t_list **list, int ac, char **av)
 	}
 	if (!*list)
 		return (write(2, "Error\n", 6), 0);
+	fill_index_stack(list, ft_lstsize(*list));
 	return (1);
 }
 
