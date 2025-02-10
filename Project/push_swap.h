@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/09 11:24:57 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:12:26 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ typedef enum e_op
 	RRR
 }					t_op;
 
-void				swap(t_list **a, t_list **b, t_op op);
-void				push(t_list **a, t_list **b, t_op op);
-void				rotate(t_list **a, t_list **b, t_op op);
-void				rrotate(t_list **a, t_list **b, t_op op);
+void				swap(t_list **a, t_list **b, t_op op, int yes);
+void				push(t_list **a, t_list **b, t_op op, int yes);
+void				rotate(t_list **a, t_list **b, t_op op, int yes);
+void				rrotate(t_list **a, t_list **b, t_op op, int yes);
 
 #endif

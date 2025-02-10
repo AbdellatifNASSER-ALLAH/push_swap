@@ -6,13 +6,11 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/08 14:24:37 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:40:34 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	view_list(t_list *a, t_list *b);
 
 int	main(int ac, char **av)
 {
@@ -29,24 +27,4 @@ int	main(int ac, char **av)
 		ft_lstclear(&a);
 	}
 	return (0);
-}
-
-
-
-// JUST FOR SHOWING LISTS
-void	view_list(t_list *a, t_list *b)
-{
-	int	size;
-
-	size = ft_lstsize(a) > ft_lstsize(b) ? ft_lstsize(a) : ft_lstsize(b);
-	printf("_______________________\n");
-	while (size)
-	{
-		a ? printf("|  %d  ", a->content) : printf("|  -  ");
-		b ? printf("|  %d  |\n", b->content) : printf("|  -  |\n");
-		a = a ? a->next : NULL;
-		b = b ? b->next : NULL;
-		size--;
-	}
-	printf("   _     _\n   a     b  \n");
 }

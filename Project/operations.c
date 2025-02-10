@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 23:33:14 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 21:00:58 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:11:18 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_list	*get_last(t_list *lst, int before_last)
 	return (lst);
 }
 
-void	swap(t_list **a, t_list **b, t_op op)
+void	swap(t_list **a, t_list **b, t_op op, int yes)
 {
 	t_list	*tmp;
 
@@ -35,7 +35,7 @@ void	swap(t_list **a, t_list **b, t_op op)
 		(*a)->next = tmp->next;
 		tmp->next = *a;
 		*a = tmp;
-		if (op == SA)
+		if (yes && op == SA)
 			write(1, "sa\n", 3);
 	}
 	if ((op == SB || op == SS) && (*b && (*b)->next))
@@ -44,14 +44,14 @@ void	swap(t_list **a, t_list **b, t_op op)
 		(*b)->next = tmp->next;
 		tmp->next = *b;
 		*b = tmp;
-		if (op == SB)
+		if (yes && op == SB)
 			write(1, "sb\n", 3);
 	}
-	if (op == SS)
+	if (yes && op == SS)
 		write(1, "ss\n", 3);
 }
 
-void	push(t_list **a, t_list **b, t_op op)
+void	push(t_list **a, t_list **b, t_op op, int yes)
 {
 	t_list	*tmp;
 
@@ -61,7 +61,8 @@ void	push(t_list **a, t_list **b, t_op op)
 		*b = (*b)->next;
 		tmp->next = *a;
 		*a = tmp;
-		write(1, "pa\n", 3);
+		if (yes)
+			write(1, "pa\n", 3);
 	}
 	if (*a && op == PB)
 	{
@@ -69,11 +70,12 @@ void	push(t_list **a, t_list **b, t_op op)
 		*a = (*a)->next;
 		tmp->next = *b;
 		*b = tmp;
-		write(1, "pb\n", 3);
+		if (yes)
+			write(1, "pb\n", 3);
 	}
 }
 
-void	rotate(t_list **a, t_list **b, t_op op)
+void	rotate(t_list **a, t_list **b, t_op op, int yes)
 {
 	t_list	*last;
 	t_list	*tmp;
@@ -85,7 +87,7 @@ void	rotate(t_list **a, t_list **b, t_op op)
 		*a = tmp->next;
 		last->next = tmp;
 		tmp->next = NULL;
-		if (op == RA)
+		if (yes && op == RA)
 			write(1, "ra\n", 3);
 	}
 	if ((op == RB || op == RR) && (*b && (*b)->next))
@@ -95,14 +97,14 @@ void	rotate(t_list **a, t_list **b, t_op op)
 		*b = tmp->next;
 		last->next = tmp;
 		tmp->next = NULL;
-		if (op == RB)
+		if (yes && op == RB)
 			write(1, "rb\n", 3);
 	}
-	if (op == RR)
+	if (yes && op == RR)
 		write(1, "rr\n", 3);
 }
 
-void	rrotate(t_list **a, t_list **b, t_op op)
+void	rrotate(t_list **a, t_list **b, t_op op, int yes)
 {
 	t_list	*blast;
 	t_list	*tmp;
@@ -114,7 +116,7 @@ void	rrotate(t_list **a, t_list **b, t_op op)
 		tmp->next = *a;
 		*a = tmp;
 		blast->next = NULL;
-		if (op == RRA)
+		if (yes && op == RRA)
 			write(1, "rra\n", 4);
 	}
 	if ((op == RRB || op == RRR) && (*b && (*b)->next))
@@ -124,9 +126,9 @@ void	rrotate(t_list **a, t_list **b, t_op op)
 		tmp->next = *b;
 		*b = tmp;
 		blast->next = NULL;
-		if (op == RRB)
+		if (yes && op == RRB)
 			write(1, "rrb\n", 4);
 	}
-	if (op == RRR)
+	if (yes && op == RRR)
 		write(1, "rrr\n", 4);
 }

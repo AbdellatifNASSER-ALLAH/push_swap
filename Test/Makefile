@@ -23,7 +23,7 @@ test:
 	./push_swap_test_linux.sh
 
 clean:
-	rm -rf *.c *.h
+	rm -rf *.c *.h 0 traces.txt
 
 fclean: clean
 	rm -rf $(NAME)
