@@ -1,6 +1,6 @@
 .PHONY: e clean
 # Dirctory where your project resides
-DIR=~/Files/push_swap/Project
+DIR=~/Files/push_swap/to_Intra
 
 # Program Name
 NAME = push_swap
@@ -10,9 +10,13 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = lst_utils.c  operations.c  utils.c algorithm.c chunks.c quick_sort.c simple_sort.c
+SRCB = lst_utils.c  operations.c  utils.c quick_sort.c
 
 all: $(NAME)
 	$(CC) $(CFLAGS) -g push_swap.c $(SRC) -o $^
+
+bonus: $(NAME)
+	$(CC) $(CFLAGS) -g checker.c $(SRCB) -o $^
 
 $(NAME): fclean
 	cp $(DIR)/*.c  $(DIR)/*.h .
