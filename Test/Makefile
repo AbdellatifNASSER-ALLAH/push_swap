@@ -1,6 +1,6 @@
 .PHONY: e clean
 # Dirctory where your project resides
-DIR=~/Files/push_swap/to_Intra
+DIR=../Project
 
 # Program Name
 NAME = push_swap
