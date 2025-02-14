@@ -15,8 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-// TODO: I guess it obvious :)
-# include <stdio.h>
 
 typedef struct s_list
 {
@@ -41,6 +39,7 @@ void				ft_lstclear(t_list **lst);
 int					fill_stack(t_list **list, int ac, char **av);
 void				fill_index_stack(t_list **a, int size);
 long				get_number(char *str, int *j);
+int					is_valid(char **av, int ac);
 // Operations:
 typedef enum e_op
 {

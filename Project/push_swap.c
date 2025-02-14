@@ -21,10 +21,27 @@ int	main(int ac, char **av)
 	{
 		a = NULL;
 		b = NULL;
-		if (!fill_stack(&a, ac, av))
+		if (!is_valid(av, ac) || !fill_stack(&a, ac, av))
 			return (1);
 		sort_algo(&a, &b, ft_lstsize(a));
 		ft_lstclear(&a);
 	}
 	return (0);
+}
+
+int	is_valid(char **av, int ac)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac)
+	{
+		if (!av[i][0])
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
