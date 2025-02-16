@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/16 18:15:50 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/16 18:40:22 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	main(int ac, char **av)
 	{
 		a = NULL;
 		b = NULL;
-		if (!is_valid(av ,ac) || !fill_stack(&a, ac, av))
+		if (!is_valid(av, ac) || !fill_stack(&a, ac, av))
 			return (1);
 		while (1)
 		{
