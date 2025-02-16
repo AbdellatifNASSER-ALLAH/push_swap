@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 16:42:04 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/06 20:34:08 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/16 18:17:56 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,21 @@ void	quick_sort(int *arr, int low, int high)
 		quick_sort(arr, low, pi - 1);
 		quick_sort(arr, pi + 1, high);
 	}
+}
+
+int	is_valid(char **av, int ac)
+{
+	int	i;
+
+	i = 0;
+	while (i < ac)
+	{
+		if (!av[i][0])
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
