@@ -102,9 +102,6 @@ long	get_number(char *str, int *j)
 
 	res = 0;
 	sign = 1;
-	if (*j && !(str[*j] == 32) && !(str[*j] && str[*j] >= '0'
-			&& str[*j] <= '9'))
-		return (*j = -1);
 	while (str[*j] == 32)
 		(*j)++;
 	if (str[*j] == '-' || str[*j] == '+')
@@ -113,6 +110,9 @@ long	get_number(char *str, int *j)
 			sign *= -1;
 		(*j)++;
 	}
+	if (*j && !(str[*j] == 32) && !(str[*j] && str[*j] >= '0'
+			&& str[*j] <= '9'))
+		return (*j = -1);
 	if (!(str[*j] && str[*j] >= '0' && str[*j] <= '9'))
 		return (*j = -1);
 	while (str[*j] && str[*j] >= '0' && str[*j] <= '9')
