@@ -1,4 +1,5 @@
 .PHONY: e clean
+
 # Dirctory where your project resides
 DIR=../Project
 
@@ -16,7 +17,7 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -g push_swap.c $(SRC) -o $^
 
 bonus: $(NAME)
-	$(CC) $(CFLAGS) -g checker.c $(SRCB) -o $^
+	$(CC) $(CFLAGS) -g checker.c $(SRCB) -o checker
 
 $(NAME): fclean
 	cp $(DIR)/*.c  $(DIR)/*.h .
@@ -30,6 +31,6 @@ clean:
 	rm -rf *.c *.h 0 traces.txt
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) checker
 
 re: fclean all 
