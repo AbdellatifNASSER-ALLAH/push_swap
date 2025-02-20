@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/16 18:40:22 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:23:26 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static int	do_move(t_list **a, t_list **b, char *move)
 		swap(a, b, SA, 0);
 	else if (!ft_strcmp(move, "sb\n"))
 		swap(a, b, SB, 0);
-	else if (!ft_strcmp(move, "sa\n"))
+	else if (!ft_strcmp(move, "ss\n"))
 		swap(a, b, SS, 0);
 	else if (!ft_strcmp(move, "pa\n"))
 		push(a, b, PA, 0);
