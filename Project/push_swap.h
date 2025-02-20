@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:08:22 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/10 10:12:26 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:58:36 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void				ft_lstdelone(t_list *lst);
 void				ft_lstclear(t_list **lst);
 int					fill_stack(t_list **list, int ac, char **av);
 void				fill_index_stack(t_list **a, int size);
-long				get_number(char *str, int *j);
+long				get_number(char *str, int *j, long res, int sign);
 int					is_valid(char **av, int ac);
 // Operations:
 typedef enum e_op

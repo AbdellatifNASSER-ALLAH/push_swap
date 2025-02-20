@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:07:39 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/20 17:23:26 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:25:44 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,12 @@ int	main(int ac, char **av)
 			if (!do_move(&a, &b, move))
 				return (ft_lstclear(&a), ft_lstclear(&b), 1);
 		}
-		if (is_sorted(a))
+		if (is_sorted(a) && !b)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
 		ft_lstclear(&a);
+		ft_lstclear(&b);
 	}
 	return (0);
 }

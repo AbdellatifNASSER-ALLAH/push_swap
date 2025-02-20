@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 21:35:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/02/09 11:22:42 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/02/20 18:00:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	fill_stack(t_list **list, int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			n = get_number(av[i], &j);
+			n = get_number(av[i], &j, 0, 1);
 			if (j == -1 || ft_inlst(*list, n))
 			{
 				ft_lstclear(list);
@@ -95,13 +95,8 @@ int	fill_stack(t_list **list, int ac, char **av)
 	return (1);
 }
 
-long	get_number(char *str, int *j)
+long	get_number(char *str, int *j, long res, int sign)
 {
-	long	res;
-	int		sign;
-
-	res = 0;
-	sign = 1;
 	while (str[*j] == 32)
 		(*j)++;
 	if (str[*j] == '-' || str[*j] == '+')
@@ -117,6 +112,8 @@ long	get_number(char *str, int *j)
 		return (*j = -1);
 	while (str[*j] && str[*j] >= '0' && str[*j] <= '9')
 		res = res * 10 + (str[(*j)++] - 48);
+	if (str[*j] && !(str[*j] == 32))
+		return (*j = -1);
 	while (str[*j] == 32)
 		(*j)++;
 	return (res * sign);
